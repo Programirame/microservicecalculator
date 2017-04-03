@@ -12,6 +12,7 @@
         <module>calculator</module>
         <module>addition</module>
         <module>multiplication</module>
+        <module>eureka</module>
     </modules>
 
 
