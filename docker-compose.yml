@@ -1,0 +1,28 @@
+version: "3"
+services:
+  eureka:
+    build: ./eureka/
+    ports:
+      - "8761:8761"
+  addition:
+    build:
+      context: ./addition/
+    ports:
+      - "4830:4830"
+    depends_on:
+      - eureka
+  multiplication:
+    build:
+      context: ./multiplication/
+    ports:
+      - "4831:4831"
+    depends_on:
+      - eureka
+  calculator:
+    build:
+      context: ./calculator/
+    ports:
+      - "4832:4832"
+    depends_on:
+      - addition
+      - multiplication
