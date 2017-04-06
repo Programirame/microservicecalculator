@@ -15,5 +15,4 @@ public class MultiplicationController {
     public ResponseEntity<Integer> addTwoNumbers(@RequestParam(value = "x") int x, @RequestParam(value = "y") int y) {
         return new ResponseEntity<>(x*y, HttpStatus.OK);
     }
-
 }
