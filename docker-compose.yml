@@ -18,9 +18,9 @@ services:
       - "4831:4831"
     depends_on:
       - eureka
-  calculator:
+  simple-calculator:
     build:
-      context: ./calculator/
+      context: ./simple-calculator/
     ports:
       - "4832:4832"
     depends_on:
