@@ -1,28 +1,26 @@
-version: "3"
+version: '3'
 services:
-  eureka:
-    build: ./eureka/
+  eureka-server:
+    image: eureka-server
     ports:
-      - "8761:8761"
+     - "8761:8761"
   addition:
-    build:
-      context: ./addition/
+    image: addition
     ports:
       - "4830:4830"
     depends_on:
-      - eureka
+      - eureka-server
   multiplication:
-    build:
-      context: ./multiplication/
+    image: multiplication
     ports:
       - "4831:4831"
     depends_on:
-      - eureka
+      - eureka-server
   simple-calculator:
-    build:
-      context: ./simple-calculator/
+    image: simple-calculator
     ports:
       - "4832:4832"
     depends_on:
       - addition
       - multiplication
+      - eureka-server
